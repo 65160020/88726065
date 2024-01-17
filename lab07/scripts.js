@@ -17,6 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
     renderTodoList();
     todoInput.value = "";
     }
+    }
+    // ลบรายการ Todo
+    function deleteTodo(index) {
+    todos.splice(index, 1);
+    renderTodoList();
+    }
     // แสดงรายการ Todo บนหน้าเว็บ
     function renderTodoList() {
     console.log(todos);
@@ -50,3 +56,4 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // แสดงรายการ Todo คร้ังแรก
     renderTodoList();
+    });
