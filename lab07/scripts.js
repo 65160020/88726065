@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const todoText = todoInput.value.trim();
     if (todoText !== "") {
     const todoItem = {
+        //เพิ่มคำเป็นรายกานชร
     
     text: todoText,
     completed: false,
@@ -21,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function () {
     // ลบรายการ Todo
     function deleteTodo(index) {
     todos.splice(index, 1);
-    renderTodoList();
+    renderTodoList(); //คำสั่งลบ
     }
     // ตรวจสอบ/ยกเลิกการเสร็จสิ้นรายการ Todo
     function toggleComplete(index) {
     todos[index].completed = !todos[index].completed;
-    renderTodoList();
+    renderTodoList(); //คำสั่งสำเร็จ
     }
     // แสดงรายการ Todo บนหน้าเว็บ
     function renderTodoList() {
@@ -37,13 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const listItem = document.createElement("li");
     listItem.textContent = todoItem.text;
     if (todoItem.completed) {
-    listItem.classList.add("completed");
+    listItem.classList.add("completed"); //แสดงเสร็จสิ้น
     }
     const deleteButton = document.createElement("button");
     deleteButton.textContent = "ลบ";
     deleteButton.addEventListener("click", () => deleteTodo(i));
-    const completeButton = document.createElement("button");
-    completeButton.textContent = todoItem.completed ? "ยกเลิก" : "เสร็จ";
+    const completeButton = document.createElement("button"); //ปุ่มลลบ
+    completeButton.textContent = todoItem.completed ? "ยกเลิก" : "เสร็จ"; //ปุ่มยกเลิกและเสร็จ
     completeButton.addEventListener("click", () => toggleComplete(i));
     listItem.appendChild(completeButton);
     listItem.appendChild(deleteButton);
